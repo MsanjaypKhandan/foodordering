@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "cd backend && npm start",
-    "postbuild": "npm run copy-files",
-"copy-files": "xcopy /e /i /y frontend\\build backend\\src\\public",
+    "prebuild": "cd backend && npm install & cd frontend && npm install",
+   "postbuild": "mv -f frontend/build backend/src/public",
     "build": "cd frontend && npm run build"
    
   },
