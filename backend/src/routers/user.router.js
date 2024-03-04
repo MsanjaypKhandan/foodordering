@@ -45,7 +45,6 @@ router.post(
         name,
         email: email.toLowerCase(),
         password: hashedPassword,
-        isAdmin:true,
         address,
       };
     
