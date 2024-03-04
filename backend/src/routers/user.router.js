@@ -40,24 +40,15 @@ router.post(
       password,
       PASSWORD_HASH_SALT_ROUNDS
     );
-
-    if(name == "Admin"){
+    
       const newUser = {
         name,
         email: email.toLowerCase(),
         password: hashedPassword,
-        isAdmin: true,
+        isAdmin:true,
         address,
       };
-    }
-    else{
-      const newUser = {
-        name,
-        email: email.toLowerCase(),
-        password: hashedPassword,
-        address,
-      };
-    }
+    
     
 
     const result = await UserModel.create(newUser);
